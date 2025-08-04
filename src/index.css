@@ -1,0 +1,407 @@
+@import "tailwindcss";
+@theme {
+  --color-primary: #11375b;
+  --color-secondary: #181f38;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide default calendar icon in Chrome, Safari, Edge */
+input[type="date"].remove-date-icon::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  display: none;
+}
+
+/* Hide icon in Firefox */
+input[type="date"].remove-date-icon::-moz-focus-inner {
+  border: 0;
+}
+input[type="date"].remove-date-icon::-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for Ant Design components */
+.ant-table-thead > tr > th {
+  background: #11375b !important;
+  color: white !important;
+  font-weight: 600;
+}
+
+.ant-table-tbody > tr:hover > td {
+  background: #f0f8ff !important;
+}
+
+.ant-statistic-title {
+  font-weight: 600;
+  color: #11375b;
+}
+
+.ant-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ant-btn-primary {
+  background: #11375b;
+  border-color: #11375b;
+}
+
+.ant-btn-primary:hover {
+  background: #1e4a72;
+  border-color: #1e4a72;
+}
+
+/* Print styles */
+@media print {
+  .ant-table-pagination,
+  .ant-card-head,
+  .ant-btn,
+  .ant-input,
+  .ant-space {
+    display: none !important;
+  }
+
+  .ant-table {
+    font-size: 12px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ant-table {
+    font-size: 12px;
+  }
+
+  .ant-statistic {
+    text-align: center;
+  }
+}
+
+* {
+  scrollbar-width: thin;
+  /* scrollbar-color: #11375b #f5f5f5; */
+  scrollbar-width: 1px;
+}
+*::-webkit-scrollbar {
+  width: 9px;
+}
+*::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 20px;
+}
+*::-webkit-scrollbar-thumb {
+  /* background-color: #11375b; */
+  border-radius: 10px;
+  border: 2px solid #f5f5f5;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
+/* Hide scrollbar cross-browser */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* submenu bg  */
+.ant-menu-light.ant-menu-inline .ant-menu-sub.ant-menu-inline{
+  background: white;
+}
+
+/* -------------------Sidebar------------------- */
+
+/* Hide scrollbar while keeping scroll functional */
+.custom-sider::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.custom-sider {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Target the selected menu item */
+.ant-menu-item-selected {
+  /* background-color: #11375b !important;  */
+  color: white !important; /* Change the text color */
+}
+
+.ant-layout-sider-children{
+  background-color: white;
+}
+
+.ant-layout-sider{
+  background-color: white;
+}
+
+.ant-menu-item-selected .anticon {
+  color: black !important; /* Change the icon color */
+}
+/* Custom CSS to change the collapse icon color */
+.custom-sider .ant-layout-sider-trigger {
+  /* background-color: #11375b !important; */
+  color: #fff !important;
+}
+.ant-layout-sider .ant-layout-sider-trigger, .anticon .anticon-right{
+  background: inherit;
+  color: #11375b !important;
+  font-weight: 800 !important;
+  font-size:large;
+}
+.custom-sider::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 10px;
+  border: none;
+}
+
+/* General styling for dashboard menu items */
+.ant-menu-item,
+.ant-menu-submenu {
+  color: #3d3e44 !important; /* Changes the color of the menu items */
+  font-size: 18px;
+  margin: 12px 0 !important;
+}
+
+.ant-menu-item, 
+.ant-menu-item-only-children, .ant-menu-title-content {
+  color: #3d3e44 !important; /* Changes the color of the menu items */
+  font-size: 16px;
+  margin: 12px 0 !important;
+}
+
+.ant-menu-submenu.ant-menu-submenu-inline.ant-menu-submenu-open {
+  color: #11375b !important;
+  /* font-size: 18px; */
+}
+
+.ant-menu-item .anticon,
+.ant-menu-title-content .anticon {
+  font-size: 10px !important; /* Changes the color of the icons */
+}
+
+:where(.css-dev-only-do-not-override-12s4gah).ant-menu-light .ant-menu-item, :where(.css-dev-only-do-not-override-12s4gah).ant-menu-light>.ant-menu .ant-menu-item, :where(.css-dev-only-do-not-override-12s4gah).ant-menu-light .ant-menu-submenu-title, :where(.css-dev-only-do-not-override-12s4gah).ant-menu-light>.ant-menu .ant-menu-submenu-title{
+  color: #737791;
+}
+.ant-menu-item-selected {
+  color: #fff !important; /* Set the color for selected items */
+}
+
+/* select menu hover bg color */
+.ant-menu-item-selected {
+  background-color: #11375b !important;
+  color: white !important;
+}
+
+/* icon & text hover color */
+.ant-menu-item-selected,
+.ant-menu-item-selected .ant-menu-title-content {
+  color: white !important;
+}
+
+.ant-menu-item-selected .anticon,
+.ant-menu-item-selected .anticon svg {
+  color: white !important;
+  fill: white !important;
+}
+
+/* Selected item */
+.custom-menu .ant-menu-item-selected {
+  /* background-color: #11375b !important; */
+  color: #fff !important;
+}
+
+
+:where(.css-dev-only-do-not-override-lsqbnl) a:hover{
+  color: white !important; /* Set the color for links */
+}
+
+.anticon,
+ .anticon {
+  padding-right: 5px;
+}
+
+
+/* Table Summary Row টা ছোট রাখে */
+.ant-table-summary .ant-table-cell {
+  padding: 6px 10px !important;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* table header*/
+:where(.ant-table) th {
+  font-weight: 500 !important; /* medium */
+  font-size: 0.775rem !important; /* 14px (sm) */
+  color: #1f2937 !important; /* Tailwind's gray-800 */
+}
+
+/* not print column */
+@media print {
+  .action_column {
+    display: none !important;
+  }
+  /* কিন্তু summary_action_cell প্রিন্টে দেখাবে */
+  .summary_action_cell {
+    display: table-cell !important;
+  }
+}
+
+/* Ant Design Table Pagination Primary Color Styling */
+.ant-pagination .ant-pagination-item {
+  margin: 0 4px !important; /* Add gap between pagination numbers */
+}
+
+.ant-pagination .ant-pagination-item-active {
+  background-color: #11375b !important;
+  border-color: #11375b !important;
+}
+
+.ant-pagination .ant-pagination-item-active a {
+  color: white !important;
+}
+
+.ant-pagination .ant-pagination-item:hover {
+  border-color: #11375b !important;
+}
+
+.ant-pagination .ant-pagination-item:hover a {
+  color: #11375b !important;
+}
+
+.ant-pagination .ant-pagination-prev:hover,
+.ant-pagination .ant-pagination-next:hover {
+  color: #11375b !important;
+  border-color: #11375b !important;
+}
+
+.ant-pagination .ant-pagination-jump-prev:hover,
+.ant-pagination .ant-pagination-jump-next:hover {
+  color: #11375b !important;
+}
+
+/* Ant Design Loading Spinner Primary Color */
+.ant-spin .ant-spin-dot-item {
+  background-color: #11375b !important;
+}
+
+/* Ant Design Select Primary Color */
+/* .ant-select-selector:hover {
+  border-color: #11375b !important;
+} */
+
+/* .ant-select-focused .ant-select-selector {
+  border-color: #11375b !important;
+  box-shadow: 0 0 0 2px rgba(17, 55, 91, 0.2) !important;
+} */
+
+/* Ant Design Input Primary Color */
+.ant-input:hover {
+  border-color: #11375b !important;
+}
+
+.ant-input:focus {
+  border-color: #11375b !important;
+  box-shadow: 0 0 0 2px rgba(17, 55, 91, 0.2) !important;
+}
+
+/* Ant Design DatePicker Primary Color */
+.ant-picker:hover {
+  border-color: #11375b !important;
+}
+
+.ant-picker-focused {
+  border-color: #11375b !important;
+  box-shadow: 0 0 0 2px rgba(17, 55, 91, 0.2) !important;
+}
+
+/* select input field css */
+/* Focused or Opened Ant Design Select input field */
+.ant-select-focused .ant-select-selector,
+.ant-select-open .ant-select-selector {
+  border-color: #11375b !important;
+  /* box-shadow: 0 0 0 2px rgba(17, 55, 91, 0.2) !important; */
+}
+
+/* Default hover effect for consistency */
+.ant-select:not(.ant-select-disabled):hover .ant-select-selector {
+  border-color: #11375b !important;
+}
+
+/* ant button color */
+/* Custom primary modal OK button */
+.ant-btn-primary {
+  background-color: #11375B !important;
+  border-color: #11375B !important;
+}
+
+.ant-btn-primary:hover,
+.ant-btn-primary:focus {
+  background-color: #0e2f4d !important; /* slightly darker */
+  border-color: #0e2f4d !important;
+}
+
+/* Outline/Cancel Button Style */
+.ant-btn-default {
+  border-color: #11375B !important;
+  color: #11375B !important;
+}
+
+.ant-btn-default:hover,
+.ant-btn-default:focus {
+  border-color: #0e2f4d !important;
+  color: #0e2f4d !important;
+}
+
+/* Global style for Ant Design Input and Search component */
+.ant-input-affix-wrapper:focus,
+.ant-input-affix-wrapper-focused,
+.ant-input:focus,
+.ant-input-focused {
+  border-color: #11375B !important;
+  box-shadow: 0 0 0 2px rgba(17, 55, 91, 0.2) !important;
+  outline: none !important;
+}
+
+.ant-input-affix-wrapper:hover,
+.ant-input:hover {
+  border-color: #11375B !important;
+}
+
+.ant-btn-primary {
+  background-color: #11375B;
+  border-color: #11375B;
+}
+
+.ant-btn-primary:hover {
+  background-color: #0f2f4d;
+  border-color: #0f2f4d;
+}
+
+/* ant menu----------------------------------- */
+
+/* 
+:where(.css-12s4gah).ant-menu-light .ant-menu-item-selected{
+  color: white !important;
+}
+
+:where(.css-12s4gah).ant-menu-light .ant-menu-item-selected{
+  background-color: #11375B !important;
+}
+
+.ant-menu-item .ant-menu-item-active .ant-menu-item-selected{
+   background-color: #11375B !important;
+} */
