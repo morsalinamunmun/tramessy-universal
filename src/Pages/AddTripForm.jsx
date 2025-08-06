@@ -546,7 +546,7 @@ const TripForm = ({ isUpdate = false }) => {
 
           {/* Customer Information */}
           <Row gutter={16}>
-            <Col xs={24} md={12}>
+            <Col xs={24} md={8}>
               <Form.Item 
                 label="Customer Name" 
                 name="customer_name" 
@@ -555,29 +555,13 @@ const TripForm = ({ isUpdate = false }) => {
                 <Input placeholder="Enter customer name" />
               </Form.Item>
             </Col>
-            <Col xs={24} md={12}>
+            <Col xs={24} md={8}>
               <Form.Item 
                 label="Customer Mobile" 
                 name="customer_mobile" 
                 rules={[{ required: true, message: "Required field" }]}
               >
                 <Input placeholder="Enter customer mobile" />
-              </Form.Item>
-            </Col>
-          </Row>
-
-          {/* Financial Information */}
-          <Row gutter={16}>
-            <Col xs={24} md={8}>
-              <Form.Item 
-                label="Rent Amount" 
-                name="Rent_amount" 
-                rules={[{ required: true, message: "Required field" }]}
-              >
-                <InputNumber 
-                  style={{ width: '100%' }} 
-                  placeholder="Enter rent amount" 
-                />
               </Form.Item>
             </Col>
             <Col xs={24} md={8}>
@@ -591,7 +575,24 @@ const TripForm = ({ isUpdate = false }) => {
                 />
               </Form.Item>
             </Col>
-            <Col xs={24} md={8}>
+          </Row>
+
+          {/* Financial Information */}
+          <Row gutter={16}>
+            <Col xs={24} md={12}>
+              <Form.Item 
+                label="Rent Amount" 
+                name="Rent_amount" 
+                rules={[{ required: true, message: "Required field" }]}
+              >
+                <InputNumber 
+                  style={{ width: '100%' }} 
+                  placeholder="Enter rent amount" 
+                />
+              </Form.Item>
+            </Col>
+            
+            <Col xs={24} md={12}>
               <Form.Item 
                 label="Commission" 
                 name="commision" 

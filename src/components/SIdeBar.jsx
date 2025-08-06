@@ -130,7 +130,7 @@ const handleOpenChange = (keys) => {
     >
       {/* Logo Section */}
       <div className="flex justify-center items-center px-4 py-4 lg:py-0  border-b border-gray-200">
-        <Link to="/">
+        <Link to="/tramessy">
           <img
             src={logo}
             alt="Logo"

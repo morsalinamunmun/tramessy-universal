@@ -1,4 +1,4 @@
-"use client"
+
 
 import { useEffect, useState, useRef } from "react"
 import { Table, Button, Input, Modal, Card, Space, Typography, Row, Col, Tooltip, DatePicker, message, Tag } from "antd"
@@ -203,68 +203,114 @@ const Maintenance = () => {
   }
 
   // Print function
-  const printTable = () => {
-    const actionColumns = document.querySelectorAll(".action_column")
-    const statusColumns = document.querySelectorAll(".status_column") // Select status column elements
-    const paginationElements = document.querySelectorAll(".ant-pagination")
+  // const printTable = () => {
+  //   const actionColumns = document.querySelectorAll(".action_column")
+  //   const statusColumns = document.querySelectorAll(".status_column") // Select status column elements
+  //   const paginationElements = document.querySelectorAll(".ant-pagination")
 
-    actionColumns.forEach((col) => {
-      col.style.display = "none"
-    })
-    statusColumns.forEach((col) => {
-      col.style.display = "none" // Hide status column
-    })
-    paginationElements.forEach((el) => {
-      el.style.display = "none"
-    })
+  //   actionColumns.forEach((col) => {
+  //     col.style.display = "none"
+  //   })
+  //   statusColumns.forEach((col) => {
+  //     col.style.display = "none" // Hide status column
+  //   })
+  //   paginationElements.forEach((el) => {
+  //     el.style.display = "none"
+  //   })
 
-    const printContent = printRef.current.outerHTML
-    const WinPrint = window.open("", "", "width=900,height=650")
-    WinPrint.document.write(`
-      <html>
-        <head>
-          <title>Print Maintenance Data</title>
-          <style>
-            table { width: 100%; border-collapse: collapse; }
-            th, td { border: 1px solid #000; padding: 8px; text-align: left; }
-            .ant-btn { display: none; }
-          </style>
-        </head>
-        <body>${printContent}</body>
-      </html>
-    `)
-    WinPrint.document.close()
-    WinPrint.focus()
-    WinPrint.print()
+  //   const printContent = printRef.current.outerHTML
+  //   const WinPrint = window.open("", "", "width=900,height=650")
+  //   WinPrint.document.write(`
+  //     <html>
+  //       <head>
+  //         <title>Print Maintenance Data</title>
+  //         <style>
+  //           table { width: 100%; border-collapse: collapse; }
+  //           th, td { border: 1px solid #000; padding: 8px; text-align: left; }
+  //           .ant-btn { display: none; }
+  //         </style>
+  //       </head>
+  //       <body>${printContent}</body>
+  //     </html>
+  //   `)
+  //   WinPrint.document.close()
+  //   WinPrint.focus()
+  //   WinPrint.print()
 
-    // Restore UI after print
-    window.onafterprint = () => {
-      actionColumns.forEach((col) => {
-        col.style.display = ""
-      })
-      statusColumns.forEach((col) => {
-        col.style.display = "" // Show status column
-      })
-      paginationElements.forEach((el) => {
-        el.style.display = ""
-      })
-      window.onafterprint = null
-    }
-    // Fallback for browsers that don't support onafterprint
-    setTimeout(() => {
-      actionColumns.forEach((col) => {
-        col.style.display = ""
-      })
-      statusColumns.forEach((col) => {
-        col.style.display = "" // Show status column
-      })
-      paginationElements.forEach((el) => {
-        el.style.display = ""
-      })
-    }, 1000)
-    WinPrint.close()
-  }
+  //   // Restore UI after print
+  //   window.onafterprint = () => {
+  //     actionColumns.forEach((col) => {
+  //       col.style.display = ""
+  //     })
+  //     statusColumns.forEach((col) => {
+  //       col.style.display = "" // Show status column
+  //     })
+  //     paginationElements.forEach((el) => {
+  //       el.style.display = ""
+  //     })
+  //     window.onafterprint = null
+  //   }
+  //   // Fallback for browsers that don't support onafterprint
+  //   setTimeout(() => {
+  //     actionColumns.forEach((col) => {
+  //       col.style.display = ""
+  //     })
+  //     statusColumns.forEach((col) => {
+  //       col.style.display = "" // Show status column
+  //     })
+  //     paginationElements.forEach((el) => {
+  //       el.style.display = ""
+  //     })
+  //   }, 1000)
+  //   WinPrint.close()
+  // }
 
+  // Update the printTable function to properly hide the last column
+const printTable = () => {
+  // Hide elements that shouldn't appear in print
+  const elementsToHide = [
+    ...document.querySelectorAll(".action_column"),
+    ...document.querySelectorAll(".status_column"),
+    ...document.querySelectorAll(".ant-pagination"),
+    ...document.querySelectorAll(".print-hide") // Add this class to any elements you want to hide
+  ];
+
+  elementsToHide.forEach(el => {
+    el.style.display = "none";
+  });
+
+  // Get only the table content
+  const printContent = document.querySelector(".ant-table-container").outerHTML;
+  
+  const WinPrint = window.open("", "", "width=900,height=650");
+  WinPrint.document.write(`
+    <html>
+      <head>
+        <title>Print Maintenance Data</title>
+        <style>
+          @page { size: auto; margin: 5mm; }
+          body { margin: 0; padding: 0; }
+          table { width: 100%; border-collapse: collapse; }
+          th, td { border: 1px solid #000; padding: 4px; text-align: left; }
+          .no-print { display: none !important; }
+        </style>
+      </head>
+      <body>
+        ${printContent}
+      </body>
+    </html>
+  `);
+  WinPrint.document.close();
+  WinPrint.focus();
+  WinPrint.print();
+
+  // Restore hidden elements
+  setTimeout(() => {
+    elementsToHide.forEach(el => {
+      el.style.display = "";
+    });
+  }, 1000);
+};
   // Filter maintenance data
   const filteredMaintenance = maintenance.filter((item) => {
     const term = searchTerm.toLowerCase()

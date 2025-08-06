@@ -237,9 +237,17 @@ const onFinish = async (values) => {
       rules={[{ required: mode === "edit" ? false : true }]}
     >
       <Select placeholder="Select size" size="middle">
-        <Option value="Large">Large</Option>
-        <Option value="Middle">Middle</Option>
-        <Option value="Small">Small</Option>
+        <Option value="4 Ton">4 Ton</Option>
+  <Option value="3 Ton">3 Ton</Option>
+  <Option value="22 Ton">22 Ton</Option>
+  <Option value="7 Feet">7 Feet</Option>
+  <Option value="9 Feet">9 Feet</Option>
+  <Option value="12 Feet">12 Feet</Option>
+  <Option value="14 Feet">14 Feet</Option>
+  <Option value="16 Feet">16 Feet</Option>
+  <Option value="18 Feet">18 Feet</Option>
+  <Option value="20 Feet">20 Feet</Option>
+  <Option value="23 Feet">23 Feet</Option>
       </Select>
     </Form.Item>
   </Col>
@@ -280,9 +288,78 @@ const onFinish = async (values) => {
             <Col xs={24} md={8}>
               <Form.Item label="Registration Zone" name="reg_zone" rules={[{ required: mode==="edit"? false:true }]}> 
                 <Select placeholder="Select zone" size="middel">
-                  <Option value="Dhaka">Dhaka</Option>
-                  <Option value="Chattogram">Chattogram</Option>
-                  <Option value="Sylhet">Sylhet</Option>
+                 <Option value="">Select zone...</Option>
+      <Option value="Dhaka Metro">Dhaka Metro</Option>
+      <Option value="Chatto Metro">Chatto Metro</Option>
+      <Option value="Sylhet Metro">Sylhet Metro</Option>
+      <Option value="Rajshahi Metro">Rajshahi Metro</Option>
+      <Option value="Khulna Metro">Khulna Metro</Option>
+      <Option value="Rangpur Metro">Rangpur Metro</Option>
+      <Option value="Barisal Metro">Barisal Metro</Option>
+      <Option value="Dhaka">Dhaka</Option>
+      <Option value="Narayanganj">Narayanganj</Option>
+      <Option value="Gazipur">Gazipur</Option>
+      <Option value="Tangail">Tangail</Option>
+      <Option value="Manikgonj">Manikgonj</Option>
+      <Option value="Munshigonj">Munshigonj</Option>
+      <Option value="Faridpur">Faridpur</Option>
+      <Option value="Rajbari">Rajbari</Option>
+      <Option value="Narsingdi">Narsingdi</Option>
+      <Option value="Kishorgonj">Kishorgonj</Option>
+      <Option value="Shariatpur">Shariatpur</Option>
+      <Option value="Gopalgonj">Gopalgonj</Option>
+      <Option value="Madaripur">Madaripur</Option>
+      <Option value="Chattogram">Chattogram</Option>
+      <Option value="Cumilla">Cumilla</Option>
+      <Option value="Feni">Feni</Option>
+      <Option value="Brahmanbaria">Brahmanbaria</Option>
+      <Option value="Noakhali">Noakhali</Option>
+      <Option value="Chandpur">Chandpur</Option>
+      <Option value="Lokkhipur">Lokkhipur</Option>
+      <Option value="Bandarban">Bandarban</Option>
+      <Option value="Rangamati">Rangamati</Option>
+      <Option value="CoxsBazar">CoxsBazar</Option>
+      <Option value="Khagrasori">Khagrasori</Option>
+      <Option value="Barisal">Barisal</Option>
+      <Option value="Barguna">Barguna</Option>
+      <Option value="Bhola">Bhola</Option>
+      <Option value="Patuakhali">Patuakhali</Option>
+      <Option value="Pirojpur">Pirojpur</Option>
+      <Option value="Jhalokati">Jhalokati</Option>
+      <Option value="Khulna">Khulna</Option>
+      <Option value="Kustia">Kustia</Option>
+      <Option value="Jashore">Jashore</Option>
+      <Option value="Chuadanga">Chuadanga</Option>
+      <Option value="Satkhira">Satkhira</Option>
+      <Option value="Bagerhat">Bagerhat</Option>
+      <Option value="Meherpur">Meherpur</Option>
+      <Option value="Jhenaidah">Jhenaidah</Option>
+      <Option value="Norail">Norail</Option>
+      <Option value="Magura">Magura</Option>
+      <Option value="Rangpur">Rangpur</Option>
+      <Option value="Ponchogor">Ponchogor</Option>
+      <Option value="Thakurgaon">Thakurgaon</Option>
+      <Option value="Kurigram">Kurigram</Option>
+      <Option value="Dinajpur">Dinajpur</Option>
+      <Option value="Nilfamari">Nilfamari</Option>
+      <Option value="Lalmonirhat">Lalmonirhat</Option>
+      <Option value="Gaibandha">Gaibandha</Option>
+      <Option value="Rajshahi">Rajshahi</Option>
+      <Option value="Pabna">Pabna</Option>
+      <Option value="Bagura">Bagura</Option>
+      <Option value="Joypurhat">Joypurhat</Option>
+      <Option value="Nouga">Nouga</Option>
+      <Option value="Natore">Natore</Option>
+      <Option value="Sirajgonj">Sirajgonj</Option>
+      <Option value="Chapainawabganj">Chapainawabganj</Option>
+      <Option value="Sylhet">Sylhet</Option>
+      <Option value="Habiganj">Habiganj</Option>
+      <Option value="Moulvibazar">Moulvibazar</Option>
+      <Option value="Sunamgonj">Sunamgonj</Option>
+      <Option value="Mymensingh">Mymensingh</Option>
+      <Option value="Netrokona">Netrokona</Option>
+      <Option value="Jamalpur">Jamalpur</Option>
+      <Option value="Sherpur">Sherpur</Option>
                 </Select>
               </Form.Item>
             </Col>

@@ -370,31 +370,6 @@ render: (fitness_date) => dayjs(fitness_date).format("DD-MM-YYYY"),
   pagination={pagination}
   onChange={(pg) => setPagination(pg)}
   scroll={{ x: 'max-content' }}
-  summary={(pageData) => {
-    let totalTrip = 0;
-    pageData.forEach(({ trip_count }) => {
-      totalTrip += Number(trip_count) || 0;
-    });
-    return (
-      <Table.Summary fixed>
-        <Table.Summary.Row className="bg-blue-50">
-          <Table.Summary.Cell strong index={0} colSpan={6}>
-            <Text className="!text-primary">
-              {/* মোট ট্রিপ */}
-              Total
-            </Text>
-          </Table.Summary.Cell>
-          <Table.Summary.Cell index={1}>
-            <Text strong className="!text-primary">{totalTrip}</Text>
-          </Table.Summary.Cell>
-          {/* Remaining columns blank */}
-          <Table.Summary.Cell />
-          <Table.Summary.Cell />
-          <Table.Summary.Cell />
-        </Table.Summary.Row>
-      </Table.Summary>
-    );
-  }}
 />
 
 
